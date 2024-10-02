@@ -1,0 +1,331 @@
+/* General Body Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #87ceeb, #d8bfd8);
+}
+
+
+/* Centering the Main Container */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Main Todo Container */
+.todo-container {
+    background: rgba(255, 255, 255, 0.4); /* Increased transparency */
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Slightly deeper shadow for contrast */
+    border-radius: 12px;
+    max-width: 350px; /* Fixed width */
+    width: 90%;
+    display: flex;
+    overflow: hidden; 
+    flex-direction: column;
+    height: 70vh; /* Set a smaller fixed height for the container */
+    backdrop-filter: blur(15px); /* Stronger blur effect for the background */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Lighter border for a subtle effect */
+}
+
+.todo-input::placeholder {
+    color: #aaa; /* Placeholder text color */
+    font-style: italic; /* Italic style for the placeholder */
+    opacity: 1; /* Ensure full opacity */
+    /* Additional styles can be added below */
+    font-size: 0.7rem; /* Font size of the placeholder */
+}
+
+
+
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 10px; /* Reduced bottom margin */
+    padding: 5px; /* Reduced padding for a more compact layout */
+}
+
+header h1, header h3 {
+    margin: 0;
+    padding: 5px;
+    color: #333333;
+    font-weight: bold;
+}
+
+header h1 {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove padding */
+    font-size: 1.8rem; /* Font size for main title */
+    color: #333333;
+    font-weight: bold;
+    line-height: 1.2; /* Line spacing */
+}
+
+header h3 {
+    font-size: 1.0rem; /* Subtitle size */
+    line-height: 1.1; /* Tighten spacing for subtitle */
+    color: #666666;
+}
+
+.header-logo {
+    width: 40px; /* Adjust size */
+    height: 40px; /* Match height for square ratio */
+    display: inline-block; /* Ensure logo stays inline */
+    margin-right: 0px; /* Space between logo and text */
+    vertical-align: middle; /* Center logo with text */
+    margin-top: 12px;
+}
+
+/* Date-Time Styling */
+.date-time {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.8rem; /* Decreased font size */
+    color: #555;
+    padding: 3px 8px; /* Reduced padding for a smaller appearance */
+    background: #f1f1f1;
+    border-radius: 6px; /* Slightly smaller border radius */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Reduced shadow for a lighter look */
+    display: inline-block;
+    margin-top: 3px; /* Reduced margin-top */
+}
+
+
+/* Form Styling */
+.form{
+    display: flex;
+    flex-direction: row; /* Items in a row */
+    gap: 0; /* No gap to make them appear attached */
+    width: 100%;
+    align-items: center;
+    justify-content: center; /* Center all items horizontally */
+}
+
+.todo-input {
+    height: 0.8rem; /* Decreased height */
+    width: 60%; /* Reduced width */
+    max-width: 200px; /* Set a smaller max width */
+    padding: 5px;
+    border-radius: 4px 0 0 4px; /* Rounded corners on the left */
+    border: 1px solid #ddd;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+
+
+.todo-input:focus {
+    border: 1px solid #4CAF50; /* Green border on focus */
+}
+
+.todo-btn {
+    font-size: 0.7rem; /* Smaller font size */
+    width: 30%; /* Adjusted width */
+    max-width: 100px; /* Set max width */
+    height: 20px; /* Smaller height */
+    padding: 6px;
+    border: none;
+    background: #4CAF50; /* Button color */
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    display: inline-flex; /* Ensure it's visible and inline */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    border-radius: 0 4px 4px 0; /* Rounded corners on the right */
+}
+.todo-btn:focus,
+.todo-btn:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.todo-btn:hover {
+    background: #45a049; /* Change color on hover */
+}
+
+/* Scrollable Task List Styling */
+.task-list {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+/* Task List Styling */
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 300px; /* Set a maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+
+/* Task Item Styling */
+.todo-item {
+    height: 20px; /* Reduced height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 6px; /* Smaller padding to match the reduced height */
+    margin: 4px 0; /* Adjusted margin for compact spacing */
+    background: linear-gradient(to right, #f0f0f0, #e0e0e0); /* Subtle gradient background */
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+
+.todo-item:hover {
+    transform: translateY(-2px);
+}
+
+.todo-item span {
+    font-size: 0.9rem; /* Smaller font size */
+    color: #333;
+    flex: 1;
+    word-break: break-word;
+}
+
+/* Task Button Actions */
+.task-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.check-btn,
+.delete-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.1rem; /* Smaller button size */
+    transition: color 0.3s ease, transform 0.3s ease;
+    outline: none; /* Remove default outline */
+}
+
+.check-btn:focus,
+.check-btn:active,
+.delete-btn:focus,
+.delete-btn:active {
+    outline: none; /* Ensure no outline appears on click */
+    box-shadow: none; /* Remove any box shadow if applied */
+}
+
+
+.check-btn {
+    color: #4CAF50;
+}
+
+.check-btn:hover {
+    color: #388E3C;
+    transform: scale(1.1);
+}
+
+.delete-btn {
+    color: #F44336;
+}
+
+.delete-btn:hover {
+    color: #D32F2F;
+    transform: scale(1.1);
+}
+
+/* Styling for the Clear All Button */
+.clear-btn {
+    background-color: #f44336;
+    color: #ffffff;
+    border: none;
+    padding: 5px 8px; /* Smaller padding */
+    font-size: 0.75rem; /* Smaller font size */
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+}
+
+.clear-btn:hover {
+    background-color: #d32f2f;
+    transform: translateY(-1px);
+}
+
+.clear-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+/* Task List Container */
+.task-list {
+    flex: 1;
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-top: 15px;
+    border-top: 1px solid #ddd; /* Optional: Separate line */
+    height: auto; /* Ensure content fits */
+    width: 100%;
+}
+
+/* Custom Scrollbar Styling */
+/* Custom Scrollbar Styling for the Task List */
+.task-list {
+    flex: 1;
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-top: 15px;
+    border-top: 1px solid #ddd; /* Optional: Separate line */
+    height: auto; /* Ensure content fits */
+    width: 100%;
+}
+
+/* Styling the Scrollbar */
+/* Custom Scrollbar Styling for the Task List */
+.task-list {
+    flex: 1;
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-top: 15px;
+    border-top: 1px solid #ddd; /* Optional: Separate line */
+    height: auto; /* Ensure content fits */
+    width: 100%;
+}
+
+/* Styling the Scrollbar */
+.task-list::-webkit-scrollbar {
+    width: 6px; /* Decreased width of the scrollbar */
+}
+
+/* Styling the Scrollbar Track */
+.task-list::-webkit-scrollbar-track {
+    background: #f4f4f4; /* Light background color for the track */
+    border-radius: 10px; /* Rounded corners for a softer appearance */
+}
+
+/* Styling the Scrollbar Thumb */
+.task-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #87cefa, #d8bfd8); /* Gradient matching the background */
+    border-radius: 10px; /* Rounded thumb */
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.15); /* Subtle inner shadow for depth */
+}
+
+/* Hover Effect for Scrollbar Thumb */
+.task-list::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #72b7d4, #c8a9c9); /* Slightly darker gradient on hover */
+}
+
+/* Mozilla Firefox Custom Scrollbar */
+.task-list {
+    scrollbar-width: thin; /* Thin scrollbar width for Firefox */
+    scrollbar-color: #87cefa #f4f4f4; /* Thumb and track color for Firefox */
+}
